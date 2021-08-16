@@ -1,0 +1,37 @@
+name: Alamofire, nameSpecified: , owner: Alamofire, version: 5.4.3
+
+name: Carthage, nameSpecified: , owner: Carthage, version: 0.38.0
+
+name: Device, nameSpecified: , owner: Ekhoo, version: f2f796b
+
+name: KeychainAccess, nameSpecified: , owner: kishikawakatsumi, version: v4.2.2
+
+name: LicensePlist, nameSpecified: , owner: mono0926, version: 3.13.0
+
+name: Moya, nameSpecified: , owner: Moya, version: 14.0.1
+
+name: Nuke, nameSpecified: , owner: kean, version: 10.3.1
+
+name: R.swift.git, nameSpecified: , owner: mac-cain13, version: master
+
+name: R.swift.Library, nameSpecified: , owner: mac-cain13, version: v5.4.0
+
+name: ReactiveSwift, nameSpecified: , owner: ReactiveCocoa, version: 6.6.1
+
+name: Reusable, nameSpecified: , owner: AliSoftware, version: 4.1.1
+
+name: RxSwift, nameSpecified: , owner: ReactiveX, version: 5.1.2
+
+name: SVProgressHUD, nameSpecified: , owner: SVProgressHUD, version: 2.2.5
+
+name: SwiftDate, nameSpecified: , owner: malcommac, version: 6.3.1
+
+name: SwiftLint, nameSpecified: , owner: realm, version: 0.43.1
+
+name: SwiftyBeaver, nameSpecified: , owner: SwiftyBeaver, version: 1.9.5
+
+name: XcodeGen, nameSpecified: , owner: yonaskolb, version: 2.24.0
+
+add-version-numbers: false
+
+LicensePlist Version: 3.13.0

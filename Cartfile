@@ -1,0 +1,15 @@
+## UI
+github "SVProgressHUD/SVProgressHUD"
+
+## Network
+github "kean/Nuke"
+github "Alamofire/Alamofire"
+github "Moya/Moya"
+
+## Others
+github "SwiftyBeaver/SwiftyBeaver"
+github "mac-cain13/R.swift.Library"
+github "kishikawakatsumi/KeychainAccess"
+github "malcommac/SwiftDate"
+github "Ekhoo/Device" "master"
+github "AliSoftware/Reusable"

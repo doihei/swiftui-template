@@ -1,0 +1,14 @@
+/* 
+  URLs.strings
+  iOSTemplate
+
+  Created by doi on 2021/07/26.
+  Copyright © 2021 andfactory. All rights reserved.
+*/
+
+// App StoreのURL
+"AppStore" = "https://itunes.apple.com/jp/app/hogehoge";
+
+// 画像URL
+// width, heightをそれぞれ数値に置換する
+"Image" = "https://placehold.jp/widthxheight.png";

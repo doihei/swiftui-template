@@ -1,0 +1,13 @@
+/* 
+  Sample.strings
+  Template
+
+  Created by doi on 2021/07/26.
+  
+*/
+
+"PrefetchImageButtonTittle" = "To prefetch image VC";
+"EditButtonTittle" = "To Edit VC";
+"SignUpButtonTittle" = "To Signin VC";
+"LoginButtonTittle" = "To Login VC";
+"InputButtonTittle" = "To Input Cell VC";

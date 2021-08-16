@@ -1,0 +1,16 @@
+/* 
+  SampleInput.strings
+  Template
+
+  Created by doi on 2021/07/26.
+  
+*/
+
+"DefaultInput1" = "hogehoge";
+"DefaultInput3" = "hoge\nfuga";
+"Input1Title" = "Input1";
+"Input2Title" = "Input2";
+"Input3Title" = "Input3";
+"Input4Title" = "Input4";
+"Input5Title" = "Input5";
+"Input6Title" = "Input6";

@@ -1,0 +1,11 @@
+/* 
+  SelectView.strings
+  Template
+
+  Created by 大國嗣元 on 2021/02/21.
+  
+*/
+
+"NavigationDefaultTitle" = "選択してください";
+"HeaderDefaultTitle" = "選択してください";
+"FooterButtonDefaultTitle" = "保存";

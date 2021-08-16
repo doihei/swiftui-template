@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  iOSTemplate
+
+  Created by doi on 2021/07/26.
+  Copyright © 2021 andfactory. All rights reserved.
+*/
+
+// 共通ダイアログOKボタンタイトル
+"CommonDialogOkButtonTitle" = "OK";
+
+// 共通ダイアログDoneボタンタイトル
+"CommonDialogDoneButtonTitle" = "Done";
+
+// 共通ダイアログキャンセルボタンタイトル
+"CommonDialogCancelTitle" = "Cancel";
+
+// 共通ナビゲーションクローズボタンタイトル
+"CommonNavigationCloseTitle" = "Close";
+
+// 共通ナビゲーションセーブボタンタイトル
+"CommonNavigationSaveTitle" = "Save";
+
+// 共通ナビゲーションログインボタンタイトル
+"CommonNavigationLoginTitle" = "Login";
+
+// 不明なエラー発生時ダイアログメッセージ
+"UnknownErrorDialogMessage" = "An unknown error occurred.";
+
+// ネットワークエラーダイアログメッセージ
+"NetworkErrorDialogMessage" = "A communication error occurred.\nPlease connect again in a good communication environment.";
+
+"Version" = "Version ";
+
+// TextInputView
+"TextInputViewDefaultTitle" = "Title";
+"TextInputViewDefaultPlaceholder" = "Please enter";
+"TextInputViewDefaultPickerFieldPlaceholder" = "Please select";
+
+// MultiLineInputView
+"MultiLineInputViewDefaultTitle" = "Name";
+"MultiLineInputViewDefaultPlaceholder" = "Please input";
+
+// DateInputView
+"DateInputViewDefaultTitle" = "Name";
+"DateInputViewDefaultPlaceholder" = "Please select";
+
+// SelectInputView
+"SelectInputViewDefaultTitle" = "Name";
+"SelectInputViewDefaultPlaceholder" = "Please select";
+"SelectInputViewUnselected" = "Unselected";
+
+// MultiSelectInputView
+"MultiSelectInputViewDefaultTitle" = "Name";
+"MultiSelectInputViewDefaultPlaceholder" = "Please select";

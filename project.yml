@@ -1,0 +1,154 @@
+name: Template
+options:
+  bundleIdPrefix: jp.co.andfactory
+  deploymentTarget:
+    iOS: 14.0
+settings:
+  DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+targets:
+  Template:
+    preBuildScripts:
+      - script: |
+                if mint list | grep -q 'R.swift'; then
+                    mint run R.swift rswift generate "$SRCROOT/Template/Sources/R.generated.swift"
+                else
+                    echo "error: R.swift not installed; run 'mint bootstrap' to install"
+                    return -1
+                fi
+        name: R.swift
+        inputFiles:
+          - $TEMP_DIR/rswift-lastrun
+        outputFiles:
+          - $SRCROOT/Template/Sources/R.generated.swift
+      - script: mint run mono0926/LicensePlist license-plist --output-path $SRCROOT/Template/Settings.bundle
+        name: LicensePlist
+
+    type: application
+    platform: iOS
+    dependencies:
+      - target: TemplateDomains
+      - target: TemplateRepositories
+      - target: TemplateDataSources
+      - framework: Carthage/Build/Alamofire.xcframework
+      - framework: Carthage/Build/Device.xcframework
+      - framework: Carthage/Build/KeychainAccess.xcframework
+      - framework: Carthage/Build/Moya.xcframework
+      - framework: Carthage/Build/Nuke.xcframework
+      - framework: Carthage/Build/Reusable.xcframework
+      - framework: Carthage/Build/Rswift.xcframework
+      - framework: Carthage/Build/SVProgressHUD.xcframework
+      - framework: Carthage/Build/SwiftDate.xcframework
+      - framework: Carthage/Build/SwiftyBeaver.xcframework
+    deploymentTarget:
+      iOS: 14.0
+    sources:
+      - Template/
+      - path: "Template/Sources/R.generated.swift"
+        optional: true
+        type: file
+    settings:
+      base:
+        CODE_SIGN_ENTITLEMENTS: "Template/Resources/Template.entitlements"
+        TARGETED_DEVICE_FAMILY: 1
+        # TODO: AppleDeveloperアカウントが作成され次第設定する
+        # DEVELOPMENT_TEAM: ""
+      configs:
+        Debug:
+          BUNDLE_DISPLAY_NAME_PREFIX: "[Debug]"
+          PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.debug.Template"
+        Release:
+          BUNDLE_DISPLAY_NAME_PREFIX: ""
+          PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.Template"
+    scheme:
+      testTargets:
+        - TemplateTests
+      gatherCoverageData: true
+  TemplateTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: TemplateTests/
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.TemplateTests"
+      TARGETED_DEVICE_FAMILY: 1
+  TemplateDomains:
+    type: framework
+    platform: iOS
+    dependencies:
+      - target: TemplateRepositories
+    deploymentTarget:
+      iOS: 14.0
+    sources: TemplateDomains/
+    settings:
+      FRAMEWORK_SEARCH_PATHS:
+        - "$(inherited)"
+        - "$(PROJECT_DIR)/Carthage/Build"
+      PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.TemplateDomains"
+      TARGETED_DEVICE_FAMILY: 1
+    scheme:
+      testTargets:
+        - TemplateDomainsTests
+      gatherCoverageData: true
+  TemplateDomainsTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: TemplateDomainsTests/
+    settings:
+      FRAMEWORK_SEARCH_PATHS:
+        - "$(inherited)"
+        - "$(PROJECT_DIR)/Carthage/Build"
+      PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.TemplateDomainsTests"
+      TARGETED_DEVICE_FAMILY: 1
+  TemplateRepositories:
+    type: framework
+    platform: iOS
+    dependencies:
+      - target: TemplateDataSources
+    deploymentTarget:
+      iOS: 14.0
+    sources: TemplateRepositories/
+    settings:
+      FRAMEWORK_SEARCH_PATHS:
+        - "$(inherited)"
+        - "$(PROJECT_DIR)/Carthage/Build"
+      PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.TemplateRepositories"
+      TARGETED_DEVICE_FAMILY: 1
+    scheme:
+      testTargets:
+        - TemplateRepositoriesTests
+      gatherCoverageData: true
+  TemplateRepositoriesTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: TemplateRepositoriesTests/
+    settings:
+      FRAMEWORK_SEARCH_PATHS:
+        - "$(inherited)"
+        - "$(PROJECT_DIR)/Carthage/Build"
+      PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.TemplateRepositories"
+      TARGETED_DEVICE_FAMILY: 1
+  TemplateDataSources:
+    type: framework
+    platform: iOS
+    deploymentTarget:
+      iOS: 14.0
+    sources: TemplateDataSources/
+    settings:
+      FRAMEWORK_SEARCH_PATHS:
+        - "$(inherited)"
+        - "$(PROJECT_DIR)/Carthage/Build"
+      PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.TemplateDataSources"
+      TARGETED_DEVICE_FAMILY: 1
+    scheme:
+      testTargets:
+        - TemplateDataSourcesTests
+      gatherCoverageData: true
+  TemplateDataSourcesTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: TemplateDataSourcesTests/
+    settings:
+      FRAMEWORK_SEARCH_PATHS:
+        - "$(inherited)"
+        - "$(PROJECT_DIR)/Carthage/Build"
+      PRODUCT_BUNDLE_IDENTIFIER: "jp.co.andfactory.TemplateDataSourcesTests"
+      TARGETED_DEVICE_FAMILY: 1

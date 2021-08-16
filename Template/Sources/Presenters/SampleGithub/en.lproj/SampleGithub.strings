@@ -1,0 +1,11 @@
+/* 
+ SampleGithub.strings
+  Template
+
+  Created by doi on 2021/07/26.
+  
+*/
+
+"NavitionTitle" = "Github Users";
+"SearchPlaceholder" = "Search user...";
+"ListDetailButtonTitle" = "detail";
