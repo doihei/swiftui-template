@@ -20,7 +20,7 @@ struct SampleGithubListView: View {
                 imageLoader.image?
                     .resizable()
                     .aspectRatio(1.0, contentMode: .fit)
-                    .border(Color.gray, width: 0.5)
+                    .clipAndOverlay(cornerRadius: 30, borderColor: .black, borderWidth: 2)
                     .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 8))
             }
             Text(login)
