@@ -23,15 +23,16 @@ struct SampleGithubView<ViewModel: SampleGithubViewModelType>: View {
                         url: URL(string: item.avatarUrl)!,
                         login: item.login,
                         detailAction: {
-                            presenter.input.didTapUser.send(item.htmlUrl)
+                            presenter.input.didTapUserDetail.send(item.htmlUrl)
                         },
                         followingAction: {
-                            // TODO: implement
+                            presenter.input.didTapUserFollowing
+                                .send(item.login)
                         }
                     )
                 }
             }
-            .navigationTitle(R.string.sampleGithub.navitionTitle())
+            .navigationTitle(R.string.sampleGithub.navigationTitle())
         }
         .onAppear {
             UIScrollView.appearance().keyboardDismissMode = .onDrag

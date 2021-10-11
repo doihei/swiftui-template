@@ -6,7 +6,7 @@
   
 */
 
-"NavitionTitle" = "Github Users";
+"NavigationTitle" = "Github Users";
 "SearchPlaceholder" = "Search user...";
 "ListDetailButtonTitle" = "detail";
 "ListFollowingButtonTitle" = "following";

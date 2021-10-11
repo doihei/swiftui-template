@@ -12,8 +12,8 @@ struct SampleGithubListView: View {
 
     var url: URL
     var login: String
-    var detailAction: () -> Void
-    var followingAction: () -> Void
+    var detailAction: (() -> Void)?
+    var followingAction: (() -> Void)?
 
     var body: some View {
         HStack {
@@ -27,12 +27,16 @@ struct SampleGithubListView: View {
             Text(login)
             Spacer()
             VStack(spacing: 16) {
-                Button(action: detailAction, label: {
-                    Text(R.string.sampleGithub.listDetailButtonTitle())
-                })
-                Button(action: followingAction, label: {
-                    Text(R.string.sampleGithub.listFollowingButtonTitle())
-                })
+                if let detailAction = detailAction {
+                    Button(action: detailAction, label: {
+                        Text(R.string.sampleGithub.listDetailButtonTitle())
+                    })
+                }
+                if let followingAction = followingAction {
+                    Button(action: followingAction, label: {
+                        Text(R.string.sampleGithub.listFollowingButtonTitle())
+                    })
+                }
             }.buttonStyle(BorderlessButtonStyle())
         }
         .frame(height: 83)

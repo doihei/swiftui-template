@@ -18,6 +18,7 @@ final public class SampleGithubAPIGatewayProvider {
 
 public protocol SampleGithubAPIGateway {
     func getUsers(_ q: String?) -> AnyPublisher<GetSearchUsersResponse, Error>
+    func getFollowings(of user: String) -> AnyPublisher<GetFollowingsResponse, Error>
 }
 
 final class SampleGithubAPIGatewayImpl: SampleGithubAPIGateway {
@@ -30,5 +31,8 @@ final class SampleGithubAPIGatewayImpl: SampleGithubAPIGateway {
     public func getUsers(_ q: String?) -> AnyPublisher<GetSearchUsersResponse, Error> {
         return manager.requestPublisher(GetSearchUsersRequest(q: q))
     }
+    
+    public func getFollowings(of user: String) -> AnyPublisher<GetFollowingsResponse, Error> {
+        return manager.requestPublisher(GetFollowingsRequest(user: user))
+    }
 }
-

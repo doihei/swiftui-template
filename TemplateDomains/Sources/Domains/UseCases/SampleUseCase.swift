@@ -9,9 +9,7 @@
 import Combine
 import TemplateRepositories
 
-final public class SampleUseCaseProvider {
-
-    private init() {}
+public enum SampleUseCaseProvider {
     
     public static func provide() -> SampleUseCase {
         return SampleUseCaseImpl(sampleRepository: SampleRepositoryProvider.provide())

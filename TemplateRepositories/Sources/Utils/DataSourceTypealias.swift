@@ -12,4 +12,5 @@ public typealias ErrorType = TemplateDataSources.ErrorType
 public typealias SampleEntity = TemplateDataSources.SampleEntity
 public typealias DataSourceError = TemplateDataSources.DataSourceError
 public typealias GetSearchUsersResponse = TemplateDataSources.GetSearchUsersResponse
+public typealias GetFollowingsResponse = TemplateDataSources.GetFollowingsResponse
 public typealias ItemEntity = TemplateDataSources.ItemEntity

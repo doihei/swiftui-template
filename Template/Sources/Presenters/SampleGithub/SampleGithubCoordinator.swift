@@ -23,8 +23,8 @@ final class SampleGithubCoordinator: Coordinator {
         let viewModel = SampleGithubViewModel(extra: .init(useCase: useCase))
         let presenter = SampleGithubPresenter(navigator: navigator)
         let dismissObject = DismissableDelegateObject<SampleGithubView<SampleGithubViewModel>>()
-        let sampleView = SampleGithubView(viewModel: viewModel, presenter: presenter, dismissObject: dismissObject)
-        let hostingController = UIHostingController(rootView: sampleView)
+        let view = SampleGithubView(viewModel: viewModel, presenter: presenter, dismissObject: dismissObject)
+        let hostingController = UIHostingController(rootView: view)
         dismissObject.hostingController = hostingController
         navigator.pushViewController(hostingController, animated: true)
     }

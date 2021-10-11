@@ -1,0 +1,9 @@
+/* 
+  SampleGithubFollowing.strings
+  Template
+
+  Created by ykkd on 2021/10/11.
+  
+*/
+
+"NavigationTitle" = "Followings of @%@";
