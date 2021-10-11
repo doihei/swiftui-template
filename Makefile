@@ -6,6 +6,7 @@ bootstrap:
 	mint bootstrap
 	make carthage-install
 	make xcodegen
+	make pod-install
 carthage-install:
 	mint run Carthage carthage bootstrap --platform iOS --cache-builds --use-xcframeworks
 pod-install:
