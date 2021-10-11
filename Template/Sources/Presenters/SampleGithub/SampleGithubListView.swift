@@ -12,7 +12,8 @@ struct SampleGithubListView: View {
 
     var url: URL
     var login: String
-    var action: () -> Void
+    var detailAction: () -> Void
+    var followingAction: () -> Void
 
     var body: some View {
         HStack {
@@ -25,10 +26,14 @@ struct SampleGithubListView: View {
             }
             Text(login)
             Spacer()
-            Button(action: action, label: {
-                Text(R.string.sampleGithub.listDetailButtonTitle())
-            })
-            .buttonStyle(BorderlessButtonStyle())
+            VStack(spacing: 16) {
+                Button(action: detailAction, label: {
+                    Text(R.string.sampleGithub.listDetailButtonTitle())
+                })
+                Button(action: followingAction, label: {
+                    Text(R.string.sampleGithub.listFollowingButtonTitle())
+                })
+            }.buttonStyle(BorderlessButtonStyle())
         }
         .frame(height: 83)
         .onAppear {
@@ -49,7 +54,8 @@ struct SampleGithubListView_Previews: PreviewProvider {
                     .replacingOccurrences(of: "height", with: "\(random * 10)")
             )!,
             login: "Mr. \(random)",
-            action: {}
+            detailAction: {},
+            followingAction: {}
         )
     }
 }

@@ -19,9 +19,16 @@ struct SampleGithubView<ViewModel: SampleGithubViewModelType>: View {
             VStack {
                 SearchBar(text: $viewModel.input.searchText, placeholder: R.string.sampleGithub.searchPlaceholder())
                 List(viewModel.output.items) { item in
-                    SampleGithubListView(url: URL(string: item.avatarUrl)!, login: item.login) {
-                        presenter.input.didTapUser.send(item.htmlUrl)
-                    }
+                    SampleGithubListView(
+                        url: URL(string: item.avatarUrl)!,
+                        login: item.login,
+                        detailAction: {
+                            presenter.input.didTapUser.send(item.htmlUrl)
+                        },
+                        followingAction: {
+                            // TODO: implement
+                        }
+                    )
                 }
             }
             .navigationTitle(R.string.sampleGithub.navitionTitle())
