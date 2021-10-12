@@ -19,23 +19,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     private var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Logger設定
-        let console = ConsoleDestination()
-        #if DEBUG
-        console.minLevel = .verbose
-        #else
-        console.minLevel = .error
-        #endif
-        log.addDestination(console)
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        self.window = window
-
-        let appCoordinator = AppCoordinator(window: window, launchType: .normal)
-        appCoordinator.start()
-        self.appCoordinator = appCoordinator
-        
+        setupLogger()
+        setupCoordinator()
         return true
     }
 
@@ -57,5 +42,28 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
+    }
+}
+
+extension AppDelegate {
+    
+    private func setupLogger() {
+        // Logger設定
+        let console = ConsoleDestination()
+        #if DEBUG
+        console.minLevel = .verbose
+        #else
+        console.minLevel = .error
+        #endif
+        log.addDestination(console)
+    }
+    
+    private func setupCoordinator() {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.window = window
+        
+        let appCoordinator = AppCoordinator(window: window, launchType: .normal)
+        appCoordinator.start()
+        self.appCoordinator = appCoordinator
     }
 }

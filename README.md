@@ -2,7 +2,7 @@
 SwiftUI+Combineのテンプレートプロジェクト
 
 ## 環境
-- Xcode 14
+- iOS 14
 - Swift 5.3
 
 ### 依存ツールの導入
