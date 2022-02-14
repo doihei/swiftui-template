@@ -19,6 +19,7 @@ public final class SampleGithubRepositoryProvider {
 
 public protocol SampleGithubRepository {
     func getUsers(_ q: String?) -> AnyPublisher<GetSearchUsersResponse, Error>
+    func getFollowings(of user: String) -> AnyPublisher<GetFollowingsResponse, Error>
 }
 
 final class SampleGithubRepositoryImpl: SampleGithubRepository {
@@ -31,5 +32,9 @@ final class SampleGithubRepositoryImpl: SampleGithubRepository {
     
     public func getUsers(_ q: String?) -> AnyPublisher<GetSearchUsersResponse, Error> {
         api.getUsers(q)
+    }
+    
+    func getFollowings(of user: String) -> AnyPublisher<GetFollowingsResponse, Error> {
+        api.getFollowings(of: user)
     }
 }

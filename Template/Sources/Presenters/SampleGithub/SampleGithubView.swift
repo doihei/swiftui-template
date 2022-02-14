@@ -19,12 +19,20 @@ struct SampleGithubView<ViewModel: SampleGithubViewModelType>: View {
             VStack {
                 SearchBar(text: $viewModel.input.searchText, placeholder: R.string.sampleGithub.searchPlaceholder())
                 List(viewModel.output.items) { item in
-                    SampleGithubListView(url: URL(string: item.avatarUrl)!, login: item.login) {
-                        presenter.input.didTapUser.send(item.htmlUrl)
-                    }
+                    SampleGithubListView(
+                        url: URL(string: item.avatarUrl)!,
+                        login: item.login,
+                        detailAction: {
+                            presenter.input.didTapUserDetail.send(item.htmlUrl)
+                        },
+                        followingAction: {
+                            presenter.input.didTapUserFollowing
+                                .send(item.login)
+                        }
+                    )
                 }
             }
-            .navigationTitle(R.string.sampleGithub.navitionTitle())
+            .navigationTitle(R.string.sampleGithub.navigationTitle())
         }
         .onAppear {
             UIScrollView.appearance().keyboardDismissMode = .onDrag

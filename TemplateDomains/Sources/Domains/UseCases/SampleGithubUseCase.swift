@@ -8,9 +8,7 @@
 import Combine
 import TemplateRepositories
 
-final public class SampleGithubUseCaseProvider {
-
-    private init() {}
+public enum SampleGithubUseCaseProvider {
     
     public static func provide() -> SampleGithubUseCase {
         return SampleGithubUseCaseImpl(repository: SampleGithubRepositoryProvider.provide())

@@ -1,30 +1,30 @@
 //
-//  SampleGithubPresenter.swift
+//  SampleGithubFollowingViewPresenter.swift
 //  Template
 //
-//  Created by doi on 2021/07/26.
+//  Created by ykkd on 2021/10/11.
 //
 
 import Combine
 import UIKit
 
-final class SampleGithubPresenter {
+final class SampleGithubFollowingPresenter {
+    
     class Input {
         let didTapUserDetail = PassthroughSubject<String, Never>()
-        let didTapUserFollowing = PassthroughSubject<String, Never>()
     }
-
+    
     var input: Input
-
+    
     private let navigator: UINavigationController
     private var cancellables = Set<AnyCancellable>()
-
+    
     init(navigator: UINavigationController) {
         self.input = Input()
         self.navigator = navigator
         bind()
     }
-
+    
     func bind() {
         input.didTapUserDetail
             .sink { [weak self] urlString in
@@ -33,13 +33,6 @@ final class SampleGithubPresenter {
                 coordinator.start()
             }
             .store(in: &cancellables)
-        
-        input.didTapUserFollowing
-            .sink { [weak self] login in
-                guard let self = self, !login.isEmpty else { return }
-                let coordinator = SampleGithubFollowingCoordinator(self.navigator, login: login, navigationDelegate: self.navigator)
-                coordinator.start()
-            }
-            .store(in: &cancellables)
     }
 }
+

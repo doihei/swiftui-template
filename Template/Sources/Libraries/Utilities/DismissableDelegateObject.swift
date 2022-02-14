@@ -14,6 +14,12 @@ final class DismissableDelegateObject<Content> where Content: View {
     func dismiss() {
         hostingController?.dismiss(animated: true)
     }
+    
+    func dismiss(_ completion: @escaping ()-> Void) {
+        hostingController?.dismiss(animated: true) {
+            completion()
+        }
+    }
 
     func updateNetworkState(_ networkState: NetworkState) {
         hostingController?.updateNetworkState(networkState)
