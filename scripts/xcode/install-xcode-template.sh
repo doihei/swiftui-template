@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Configuration
-XCODE_TEMPLATE_DIR=$HOME'/Library/Developer/Xcode/Templates/File Templates/KSR'
+XCODE_TEMPLATE_DIR=$HOME'/Library/Developer/Xcode/Templates/File Templates/Template'
 VIEWMODEL_TEMPLATE_DIR="$XCODE_TEMPLATE_DIR""/Templates/ViewModel.xctemplate"
 COORDINATOR_TEMPLATE_DIR="$XCODE_TEMPLATE_DIR""/Templates/Coordinator.xctemplate"
 USECASE_TEMPLATE_DIR="$XCODE_TEMPLATE_DIR""/Templates/UseCase.xctemplate"
